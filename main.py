@@ -53,11 +53,21 @@ class App(QWidget):
             self.mainLabel.setText("You lose")
     def scissorsButtonOnClick(self):
         computerMove = game.retrieveComputerMove()
-        self.mainLabel.setText("Clicked Scissors")
+        if computerMove == "Rock":
+            self.mainLabel.setText("You lose")
+        if computerMove == "Scissors":
+            self.mainLabel.setText("Tie")
+        if computerMove == "Paper":
+            self.mainLabel.setText("You win")       
     
     def paperButtonOnClick(self):
         computerMove = game.retrieveComputerMove()
-        self.mainLabel.setText("Clicked Paper")
+        if computerMove == "Rock":
+            self.mainLabel.setText("You win")
+        if computerMove == "Scissors":
+            self.mainLabel.setText("You lose")
+        if computerMove == "Paper":
+            self.mainLabel.setText("Tie")       
        
         
 if __name__ == '__main__':
